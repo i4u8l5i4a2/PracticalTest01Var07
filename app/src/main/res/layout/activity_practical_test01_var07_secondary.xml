@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".PracticalTest01Var07SecondaryActivity">
+
+    <!-- CERINȚĂ: Interfata grafica va contine 4 campuri text, NEEDITABILE,
+         dispuse asemenea celor din activitatea principala (tabel 2x2).
+         Valorile vor fi primite prin Intent. -->
+
+    <!-- Titlu pentru a indica că suntem în activitatea secundară -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activitate Secundară"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- GridLayout pentru organizarea celor 4 TextView într-o tabelă 2x2 -->
+    <!-- TextView = câmp text NEEDITABIL (doar pentru afișare, nu editare) -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:alignmentMode="alignBounds"
+        android:columnOrderPreserved="false"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- CÂMPUL 1: Prima linie, prima coloană (Top-Left) - NEEDITABIL -->
+        <TextView
+            android:id="@+id/textViewTopLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:background="@android:drawable/editbox_background"
+            android:minHeight="48dp" />
+
+        <!-- CÂMPUL 2: Prima linie, a doua coloană (Top-Right) - NEEDITABIL -->
+        <TextView
+            android:id="@+id/textViewTopRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:background="@android:drawable/editbox_background"
+            android:minHeight="48dp" />
+
+        <!-- CÂMPUL 3: A doua linie, prima coloană (Bottom-Left) - NEEDITABIL -->
+        <TextView
+            android:id="@+id/textViewBottomLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:background="@android:drawable/editbox_background"
+            android:minHeight="48dp" />
+
+        <!-- CÂMPUL 4: A doua linie, a doua coloană (Bottom-Right) - NEEDITABIL -->
+        <TextView
+            android:id="@+id/textViewBottomRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:background="@android:drawable/editbox_background"
+            android:minHeight="48dp" />
+
+    </GridLayout>
+
+    <!-- CERINȚĂ: Doua butoane Sum si Product care vor efectua suma si produsul
+         celor 4 numere si vor returna rezultatul primei activitati -->
+
+    <!-- Container LinearLayout pentru cele două butoane (orizontal) -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout">
+
+        <!-- BUTONUL SUM: Calculează suma celor 4 numere -->
+        <Button
+            android:id="@+id/buttonSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="Sum" />
+
+        <!-- BUTONUL PRODUCT: Calculează produsul celor 4 numere -->
+        <Button
+            android:id="@+id/buttonProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="Product" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
